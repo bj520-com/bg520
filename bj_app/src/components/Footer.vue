@@ -1,5 +1,29 @@
 <template>
   <div class="container">
+    <hr class="footer_hr1">
+    <div class="footer_words">
+      <h2>铂爵旅拍,只用真实客照说话</h2>
+      <p>婚纱照 一价全包，包酒店 包接机，包专车，包微电影，包邮寄，底片全送</p>
+      <p>铂爵旅拍，想去哪拍就去哪拍，淘宝天猫连续六年全网销量前列!微博粉丝400万!粉丝量转发量行业前列。</p>
+      <p>婚纱照只需3980 酒店2晚，拍摄4组，服装8套 底片全送</p>
+      <p>巴黎 / 普罗旺斯 / 希腊 / 布拉格 / 瑞士 / 罗马 / 威尼斯 / 伦敦 / 佛罗伦萨 / 巴塞罗那 / 葡萄牙 / 荷兰 / 土耳其 / 冰岛</p>
+      <span class="footer_city">
+        <router-link to="index">海南&nbsp;</router-link>/
+        <router-link to="index">尚品铂爵&nbsp;</router-link>/
+        <router-link to="index">鼓浪屿&nbsp;</router-link>/
+        <router-link to="index">铂爵店&nbsp;</router-link>/
+        <router-link to="index">天津&nbsp;</router-link>/
+        <router-link to="index">福州&nbsp;</router-link>/
+        <router-link to="index">西藏&nbsp;</router-link>/
+        <router-link to="index">尚品伯爵&nbsp;</router-link>/
+        <router-link to="index">三亚铂爵会馆&nbsp;</router-link>/
+        <router-link to="index">三亚铂爵公馆等全球各地</router-link>
+      </span>
+      <p class="footer_tel">咨询热线： 400-6677-500 (在线时间：09:00-22:00)</p>
+      <p class="footer_phone">总经理投诉热线：150-6075-0068 (在线时间：09:00-21:00)</p>
+      <p class="footer_phone">媒体接洽/合作邮箱：ad@bj520.com</p>
+      <p class="footer_phone">招聘联系邮箱：bjhr@bj520.com</p>
+    </div>
     <div>
       <div class="footer_nav_dash"></div>
       <ul class="footer_nav">
@@ -42,20 +66,25 @@
           </span>
           <span>
             <a
-              href="https://ss.knet.cn/verifyseal.dll?sn=e18030935020072243br05000000&ct=df&a=1&pa=0.7935481963136295#source=baidu&plan=01&PC&quanguo-duihua(dijia)&unit=tongyong-paixing&keyword=xianhunshasheyingqianshiming?renqun_youhua=269749&bd_vid=10474987016646166658"
+              href="https://ss.knet.cn/verifyseal.dll?sn=e18030935020072243br05000000&ct=df&a=1&pa=0.4631867181735201"
               target="_blank"
               rel="nofollow"
             >
-              <img src="../../public/images/footer/cx_cert.png" alt="可信网站">
+              <img src="../../public/images/footer/cx_cert.png" width="50" alt="可信网站">
+            </a>
+          </span>
+          <span>
+            <a href="https://v.yunaq.com/" target="_blank" rel="nofollow">
+              <img src="../../public/images/footer/hy_124x47.png" width="50">
             </a>
           </span>
           <span>
             <a
-              href="https://credit.szfw.org/CX20180310037605180181.html#source=baidu&plan=01&PC&quanguo-duihua(dijia)&unit=tongyong-paixing&keyword=xianhunshasheyingqianshiming?renqun_youhua=269749&bd_vid=10474987016646166658"
+              href="https://credit.cecdc.com/CX20180310037605180181.html"
               target="_blank"
               rel="nofollow"
             >
-              <img src="../../public/images/footer/hy_124x47.png">
+              <img src="../../public/images/footer/cx_cert.png" width="50">
             </a>
           </span>
         </div>
@@ -93,6 +122,36 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  width: 100%;
+  max-width: 1920px;
+  .footer_words {
+    padding-top: 3.125%;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: 思源黑体 CN Light;
+    padding-left: 30px;
+    padding-right: 30px;
+    h2 {
+      font-size: 26px;
+      margin-bottom: 3.125%;
+    }
+    p {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    .footer_city {
+      font-size: 16px;
+      display: block;
+      line-height: 32px;
+      margin-bottom: 0px;
+      a {
+        color: #000;
+        font-size: 16px;
+      }
+    }
+  }
+
   .footer_nav_dash {
     border-top: 1px dashed #7f7f7f;
     overflow: hidden;
@@ -102,7 +161,6 @@ export default {
   }
   .footer_nav {
     list-style: none;
-    text-align: center;
     margin-bottom: 1.8%;
     li {
       display: initial;
@@ -111,7 +169,7 @@ export default {
       a {
         color: #333;
         margin-right: 1%;
-        font-size: 1.4rem;
+        font-size: 14px;
       }
     }
   }
@@ -120,40 +178,38 @@ export default {
       margin: 0;
     }
     .footer_copyright_words {
+      position: relative;
       text-align: center;
       font-size: 1.4rem;
       line-height: 80px;
-      position: relative;
       .spans {
         position: absolute;
         right: 4.1%;
         bottom: 0;
-        img {
-          width: 50px;
-        }
-        span {
-          display: inline-block;
-          position: relative;
-          width: auto;
-        }
         span.cnzz {
           width: 20px;
+        }
+        span {
+          margin-left: 2px;
         }
       }
     }
   }
   .footer_banner {
-    display: block;
+    margin: 0 auto;
     height: auto;
+    img {
+      max-width: 100%;
+    }
   }
   .footer_links {
+    display: block;
+    width: 100%;
     margin-top: 10px;
     font-size: 10px;
     opacity: 0.5;
-    text-align: center;
     a {
       color: #666666;
-      display: inline-block;
       background-color: transparent;
       margin-left: 2px;
     }

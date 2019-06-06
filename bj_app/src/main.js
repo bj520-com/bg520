@@ -16,10 +16,7 @@ import './assets/fonts/iconfont.css'
 
 Vue.use(VueAwesomeSwiper);
 
-Vue.use(ElementUI, {
-  size: 'small',
-  zIndex: 3000
-});
+Vue.use(ElementUI);
 Vue.config.productionTip = false
 // axios.defaults.withCredentials = true;
 // axios.defaults.baseURL = '127.0.0.1:3000/';

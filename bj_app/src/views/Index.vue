@@ -1,10 +1,12 @@
 <template>
   <div>
-    <Header>
-      <my-carousel></my-carousel>
-    </Header>
-    <Main></Main>
-    <Footer></Footer>
+    <el-container>
+      <el-head>
+        <my-carousel></my-carousel>
+      </el-head>
+      <el-main></el-main>
+      <el-footer></el-footer>
+    </el-container>
   </div>
 </template>
 
