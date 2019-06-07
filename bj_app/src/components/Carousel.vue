@@ -45,9 +45,9 @@ export default {
           stopOnLastSlide: false,
           disableOnInteraction: false
         },
-        pagination: {
-          el: ".swiper-pagination"
-        },
+        // pagination: {
+        //   el: ".swiper-pagination"
+        // },
         loop: true,
         navigation: {
           nextEl: ".swiper-button-next",

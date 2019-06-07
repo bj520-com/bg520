@@ -1,6 +1,10 @@
 <template>
   <div>
-    <my-carousel></my-carousel>
+    <Header>
+      <my-carousel></my-carousel>
+    </Header>
+    <Main></Main>
+    <Footer></Footer>
   </div>
 </template>
 
