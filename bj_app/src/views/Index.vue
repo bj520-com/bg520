@@ -1,7 +1,9 @@
 <template>
   <div>
     <el-container>
-      <el-header></el-header>
+      <el-header>
+        <my-header></my-header>
+      </el-header>
       <el-main>
         <my-carousel></my-carousel>
       </el-main>
@@ -14,6 +16,7 @@
 
 <script>
 import MyCarousel from "../components/Carousel";
+import MyHeader from "../components/Header";
 import MyFooter from "../components/Footer";
 export default {
   name: "Index",
@@ -22,7 +25,8 @@ export default {
   },
   components: {
     MyCarousel,
-    MyFooter
+    MyFooter,
+    MyHeader
   }
 };
 </script>

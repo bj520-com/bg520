@@ -6,7 +6,6 @@
     @select="handleSelect"
     background-color="#000"
     text-color="#fff"
-    collapse-transition="true"
   >
     <el-menu-item index="1">
       <router-link to="index">首页</router-link>
