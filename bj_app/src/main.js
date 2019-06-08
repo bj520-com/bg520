@@ -18,7 +18,7 @@ Vue.use(VueAwesomeSwiper);
 Vue.use(Element);
 axios.defaults.withCredentials = true
     // 4.设置请求服务器基础路径
-axios.defaults.baseURL = "http://127.0.0.1:3000"
+axios.defaults.baseURL = "http://127.0.0.1:3000/"
     // 5.将axios注册vue实例
 Vue.prototype.axios = axios
 new Vue({
