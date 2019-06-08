@@ -4,7 +4,11 @@
       <my-header></my-header>
     </el-header>
     <el-main>
+      <!-- 首页大轮播图 -->
       <my-carousel></my-carousel>
+      <div class="img-fluid">
+        <img src="../../public/images/index/index_city.jpg" alt="">
+      </div>
     </el-main>
     <el-footer>
       <my-footer></my-footer>
@@ -38,6 +42,7 @@ export default {
     background-color: #000;
   }
   .el-main {
+    overflow: hidden;
     padding: 0;
   }
   .el-footer{
