@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div class="navbar flex">
     <div class="navbar-brand">
       <img src="../../public/images/logo.png" alt>
@@ -13,6 +14,23 @@
     >
       <el-menu-item index="1">
         <router-link to="index">首页</router-link>
+=======
+  <el-menu
+    :default-active="activeIndex"
+    class="el-menu-demo"
+    mode="horizontal"
+    @select="handleSelect"
+    background-color="#000"
+    text-color="#fff"
+  >
+    <el-menu-item index="1">
+      <router-link to="index">首页</router-link>
+    </el-menu-item>
+    <el-submenu index="2" text-color="#fff">
+      <template slot="title">公司简介</template>
+      <el-menu-item index="2-1">
+        <router-link to="index">品牌介绍</router-link>
+>>>>>>> a3f552eb4d77097ed8a8f5a413315e2984270d97
       </el-menu-item>
       <el-submenu index="2" text-color="#fff">
         <template slot="title">公司简介</template>
