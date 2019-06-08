@@ -29,6 +29,12 @@
     <div v-for="(item,i) in list" :key="i" class="t-city-img">
       <img :src="`http://127.0.0.1:3000/cuspho/${teng}/${item}`" alt>
     </div>
+    <!-- 返回顶部 -->
+    <el-backtop :bottom="100" :right="400">
+      <div v-show="show" class="backTop">
+        <i class="el-icon-arrow-up"></i>
+      </div>
+    </el-backtop>
   </div>
 </div>
     
@@ -52,13 +58,17 @@ export default {
       ],
       teng:'augfourth',
       msg:'',
-      tempTitle:'8月第4季最新客照'
+      tempTitle:'8月第4季最新客照',
+      show:false
     };
   },
   components:{
     myHeader},
   created() {
     this.loadPhoto();
+  },
+  mounted() {
+     window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     loadPhoto() {
@@ -89,6 +99,10 @@ export default {
         this.list = result.data.data[0].pics.split(",");
         console.log(this.list);
       })
+    },
+    handleScroll(){
+      this.show=true;
+      // console.log(this.show);
     }
   }
 };
@@ -98,7 +112,7 @@ export default {
 .container {
   width: 84%;
   margin: auto;
-
+  // 顶部面包屑
   .t-breadcrumbs {
     margin-top: 36px;
     font-family: 宋体;
@@ -117,7 +131,7 @@ export default {
       color: #000;
     }
   }
-
+  // 右侧导航
   .t-jtweek-tj {
     position: fixed;
     top: 21%;
@@ -138,7 +152,7 @@ export default {
       background: #000;
     }
   }
-
+  // 主图片
   .t-city-img {
     display: flex;
     flex-direction: column;
@@ -147,6 +161,17 @@ export default {
       width: 72%;
       height: auto;
     }
+  }
+  // 返回顶部
+  .backTop{
+    height: 100%;
+    width: 100%;
+    background-color: #414141;
+    box-shadow: 0 0 6px rgba(0,0,0, .12);
+    text-align: center;
+    line-height: 40px;
+    color: #ccc;
+    font-size:30px;
   }
 }
 </style>
