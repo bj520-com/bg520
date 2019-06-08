@@ -14,10 +14,12 @@
       <my-footer></my-footer>
     </el-footer>
   </el-container>
+
 </template>
 
 <script>
 import MyCarousel from "../components/Carousel";
+import MyHeader from "../components/Header";
 import MyFooter from "../components/Footer";
 import MyHeader from "../components/Header";
 export default {
