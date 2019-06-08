@@ -33,10 +33,11 @@ server.listen(3000);
 // 功能一：请求客照欣赏照片
 server.get("/photoShow", (req, res) => {
     // 1.接收脚手架参数
+    var pname = req.query.pname == "" ? augfourth : req.query.pname;
     //SQL
-    var sql = "SELECT * FROM customerPhoto WHERE cid=1";
-    pool.query(sql, (err, result) => {
+    var sql = "SELECT pics FROM customerPhoto WHERE pname=?";
+    pool.query(sql, [pname], (err, result) => {
         if (err) throw err;
-        res.send({ code: 1, msg: 'secceed', data: result });
+        res.send({ code: 1, msg: 'succeed', data: result });
     })
 })

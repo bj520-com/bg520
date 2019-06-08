@@ -1,4 +1,6 @@
 <template>
+<div>
+<my-header></my-header>
   <div class="container">
     <!-- 顶部面包屑导航 -->
     <div class="t-breadcrumbs">
@@ -10,87 +12,82 @@
         <el-breadcrumb-item>
           <a href="Index">客户婚纱照</a>
         </el-breadcrumb-item>
-        <el-breadcrumb-item class="myfont">8 月第4季最新客照</el-breadcrumb-item>
+        <el-breadcrumb-item class="myfont">{{tempTitle}}</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <!-- 右侧页面导航 -->
     <div class="t-jtweek-tj">
       <ul>
-        <li>
-          <router-link to="photoShow">
-            <div class="t-photo-week-tj">5月第4季最新客照</div>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="photoShow">
-            <div class="t-photo-week-tj">5月第3季最新客照</div>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="photoShow">
-            <div class="t-photo-week-tj">5月第2季最新客照</div>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="photoShow">
-            <div class="t-photo-week-tj">5月第1季最新客照</div>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="photoShow">
-            <div class="t-photo-week-tj">4月第4季最新客照</div>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="photoShow">
-            <div class="t-photo-week-tj">4月第3季最新客照</div>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="photoShow">
-            <div class="t-photo-week-tj">4月第2季最新客照</div>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="photoShow">
-            <div class="t-photo-week-tj">4月第1季最新客照</div>
+        <li v-for="(item,i) of timeList" :key="i">
+          <router-link to="photoShow"  >
+            <div @click="photoShow($event)" :data-msg="i" class="t-photo-week-tj">{{item.tchs}}</div>
           </router-link>
         </li>
       </ul>
     </div>
     <!-- 主图片 -->
-    <div v-for="(item,i) in list" :key="i">
-      <img :src="'public/'+item" alt="">
+    <div v-for="(item,i) in list" :key="i" class="t-city-img">
+      <img :src="`http://127.0.0.1:3000/cuspho/${teng}/${item}`" alt>
     </div>
   </div>
+</div>
+    
 </template>
 
 <script>
+import myHeader from '../components/Header.vue'
 export default {
   data() {
     return {
-      list:[],
-    }
+      list: [],
+      timeList: [
+        { teng: "mayfourth", tchs: "5月第4季最新客照" },
+        { teng: "maythird", tchs: "5月第3季最新客照" },
+        { teng: "maysecond", tchs: "5月第2季最新客照" },
+        { teng: "mayfirst", tchs: "5月第1季最新客照" },
+        { teng: "aprfourth", tchs: "4月第4季最新客照" },
+        { teng: "aprthird", tchs: "4月第3季最新客照" },
+        { teng: "aprsecond", tchs: "4月第2季最新客照" },
+        { teng: "aprfirst", tchs: "4月第1季最新客照" }
+      ],
+      teng:'augfourth',
+      msg:'',
+      tempTitle:'8月第4季最新客照'
+    };
   },
-  computed: {},
+  components:{
+    myHeader},
   created() {
     this.loadPhoto();
   },
   methods: {
     loadPhoto() {
       // 1.创建url
-      var url="/photoShow";
+      var url = "photoShow";
       // 2.创建参数对象
-      var obj={};
+      var obj = {params:{pname:'augfourth'}};
       // 3.发送ajax请求
-      this.axios.get(
-        url,
-      ).then(result=>{
+      this.axios.get(url,obj).then(result => {
         // 4.获取服务器数据
+        // console.log(result);
         // var pics=result.data.data[0].pics;
         // this.list=pics.split(',');
         // var pics=result.data.data[0].pics;
-        this.list=result.data.data[0].pics.split(',');
+        this.list = result.data.data[0].pics.split(",");
+        
+      });
+    },
+    photoShow(e) {
+      var i= e.target.dataset.msg;
+      this.teng=this.timeList[i].teng;
+      this.tempTitle=this.timeList[i].tchs;
+      this.list=[];
+      this.axios.get(
+        "photoShow",
+        {params:{pname:this.timeList[i].teng}}
+      ).then(result=>{
+        this.list = result.data.data[0].pics.split(",");
+        console.log(this.list);
       })
     }
   }
@@ -108,8 +105,9 @@ export default {
 
     .el-breadcrumb {
       .el-breadcrumb__item {
-        a {
-          font-size: 1.6rem;
+        a,
+        span {
+          font-size: 0.16rem;
           font-weight: 500;
         }
       }
@@ -122,17 +120,32 @@ export default {
 
   .t-jtweek-tj {
     position: fixed;
-    top: 15%;
+    top: 21%;
     right: 12%;
 
     .t-photo-week-tj {
       width: 197px;
-      font-size: 1.6rem;
+      font-size: 0.16rem;
       color: #000;
       border: 1px solid #000;
       margin-bottom: 18px;
       padding: 15px 0px;
       line-height: 20px;
+      background: #fff;
+    }
+    a :hover {
+      color: #fff;
+      background: #000;
+    }
+  }
+
+  .t-city-img {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    img {
+      width: 72%;
+      height: auto;
     }
   }
 }

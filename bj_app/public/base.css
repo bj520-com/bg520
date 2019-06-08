@@ -18,6 +18,7 @@ a {
 html {
   font-size: 625%;
 }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -30,7 +31,7 @@ body {
 }
 
 .container {
-  max-width: 1920px;
+    max-width: 1920px;
 }
 
 :root {
@@ -82,8 +83,8 @@ ol {
 }
 
 img {
-  vertical-align: middle;
-  border-style: none;
+    vertical-align: middle;
+    border-style: none;
 }
 .img-fluid {
   max-width: 100%;
@@ -91,11 +92,11 @@ img {
 }
 
 .fl {
-  float: left;
+    float: left;
 }
 
 .fr {
-  float: right;
+    float: right;
 }
 
 .container:before,
@@ -105,22 +106,22 @@ img {
 }
 
 .container:after {
-  clear: both;
+    clear: both;
 }
 
 a {
-  /* color: #007bff; */
-  text-decoration: none;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
+    /* color: #007bff; */
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .flex {
-  display: flex;
+    display: flex;
 }
 
 .clearfix:before,
@@ -130,21 +131,21 @@ a:hover {
 }
 
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
 
 input[type="search"] {
-  box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 input[type="submit"] {
-  cursor: pointer;
-  *overflow: visible;
-  border-radius: 0;
+    cursor: pointer;
+    *overflow: visible;
+    border-radius: 0;
 }
 
 .hide {
-  display: none !important;
+    display: none !important;
 }
 
 hr {
