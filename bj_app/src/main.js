@@ -2,8 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-// import axios from 'axios';
-// import axios from 'axios';
+import axios from 'axios';
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
@@ -17,12 +16,13 @@ import './assets/fonts/iconfont.css'
 Vue.use(VueAwesomeSwiper);
 
 Vue.use(Element);
-Vue.config.productionTip = false
-// axios.defaults.withCredentials = true;
-// axios.defaults.baseURL = '127.0.0.1:3000/';
-// Vue.protoType.axios = axios;
+axios.defaults.withCredentials = true
+    // 4.设置请求服务器基础路径
+axios.defaults.baseURL = "http://127.0.0.1:3000/"
+    // 5.将axios注册vue实例
+Vue.prototype.axios = axios
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app')
