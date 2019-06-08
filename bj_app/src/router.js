@@ -37,6 +37,8 @@ export default new Router({
       path:'/photoShow',
       name:'photoshow',
       component:photoShow
-    }
+    },
+    // 客户评价列表路由
+    {path:'/customerList',name:'customerlist',component:customerList}
   ]
 })
