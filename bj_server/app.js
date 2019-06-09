@@ -53,7 +53,7 @@ server.get("/list",(req,res)=>{
     if(!psize){psize=6};
     psize=parseInt(psize);
     var start=parseInt((pnum-1)*psize);
-    var sql="select title,subtitle,updateTime,img from customerList limit ?,?";
+    var sql="select title,subtitle,city,updateTime,img from customerList limit ?,?";
   
     pool.query(sql,[start,psize],(err,result)=>{
         if(err)throw err;
