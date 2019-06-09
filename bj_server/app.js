@@ -41,3 +41,37 @@ server.get("/photoShow", (req, res) => {
         res.send({ code: 1, msg: 'succeed', data: result });
     })
 })
+
+
+// 张沥丹
+//客户评价列表
+server.get("/list",(req,res)=>{
+    console.log(req.query)
+    var psize=req.query.psize;
+    var pnum=req.query.pnum;
+    if(!pnum){pnum=1};
+    if(!psize){psize=6};
+    psize=parseInt(psize);
+    var start=parseInt((pnum-1)*psize);
+    var sql="select title,subtitle,updateTime,img from customerList limit ?,?";
+  
+    pool.query(sql,[start,psize],(err,result)=>{
+        if(err)throw err;
+        if(result.length>0){
+            res.send({code:1,msg:"查询成功",data:result})
+        }else{res.send({code:-1,msg:"查询失败"})}
+    })
+});
+//客户评价详情
+server.get("/details",(req,res)=>{
+    var cid=req.query.cid;
+    if(!cid){   cid=1     
+    }
+    var sql="select classnav,title,subtitle,img,details from evaluation where cid=?"
+    pool.query(sql,[cid],(err,result)=>{
+        if(err)throw err;
+        if(result.length>0){
+            res.send({code:1,msg:"查询成功",data:result})
+        }else{res.send({code:-1,msg:"查询失败"})}
+    })
+})

@@ -28,6 +28,7 @@
     <!-- 主图片 -->
     <div v-for="(item,i) in list" :key="i" class="t-city-img">
       <img :src="`http://127.0.0.1:3000/cuspho/${teng}/${item}`" alt>
+      
     </div>
     <!-- 返回顶部 -->
     <el-backtop :bottom="100" :right="400">
