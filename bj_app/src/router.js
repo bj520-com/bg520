@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Footer from './components/Footer'
 import Header from './components/Header'
+import Header_mv from './components/Header_mv'
 import Carousel from './components/Carousel'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
@@ -32,6 +33,11 @@ export default new Router({
       path: '/Header',
       name: 'header',
       component: Header
+    },
+    {
+      path: '/Header_mv',
+      name: 'header_mv',
+      component: Header_mv
     },
     {
       path: '/photoShow',

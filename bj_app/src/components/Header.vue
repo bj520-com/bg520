@@ -3,7 +3,13 @@
     <a href="index" class="navbar-brand">
       <img src="../../public/images/logo.png" alt>
     </a>
-    <el-menu class="el-menu-demo flex" mode="horizontal" background-color="#000" text-color="#fff">
+    <el-menu
+      class="el-menu-demo flex"
+      mode="horizontal"
+      background-color="#000"
+      text-color="#fff"
+      active-text-color="#fff"
+    >
       <el-menu-item index="1">
         <router-link to="index">首页</router-link>
       </el-menu-item>
@@ -81,7 +87,7 @@ export default {
   height: 0.8rem;
   margin: 0 auto;
   line-height: 0.8rem;
-  align-items: center;
+  // align-items: center;
 
   .navbar-brand {
     margin-right: 0.8rem;
@@ -97,10 +103,14 @@ export default {
       padding: 0 0.1rem;
     }
     .el-menu-item {
+      border: 0;
       padding: 0 0.1rem;
       a {
         font-size: 0.1rem;
       }
+    }
+    .el-menu-item.is-active {
+      border: 0;
     }
   }
 }

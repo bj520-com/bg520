@@ -3,27 +3,27 @@
     <!-- swiper -->
     <swiper :options="swiperOption">
       <swiper-slide>
-        <router-link to="home">
+        <router-link to="index">
           <img src="../../public/images/carousel/1.jpg" alt>
         </router-link>
       </swiper-slide>
       <swiper-slide>
-        <router-link to="home">
+        <router-link to="index">
           <img src="../../public/images/carousel/2.jpg" alt>
         </router-link>
       </swiper-slide>
       <swiper-slide>
-        <router-link to="home">
+        <router-link to="index">
           <img src="../../public/images/carousel/3.jpg" alt>
         </router-link>
       </swiper-slide>
       <swiper-slide>
-        <router-link to="home">
+        <router-link to="index">
           <img src="../../public/images/carousel/4.jpg" alt>
         </router-link>
       </swiper-slide>
       <swiper-slide>
-        <router-link to="home">
+        <router-link to="index">
           <img src="../../public/images/carousel/5.jpg" alt>
         </router-link>
       </swiper-slide>
