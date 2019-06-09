@@ -7,14 +7,13 @@
       <!-- 首页大轮播图 -->
       <my-carousel></my-carousel>
       <div class="img-fluid">
-        <img src="../../public/images/index/index_city.jpg" alt="">
+        <img src="../../public/images/index/index_city.jpg" alt>
       </div>
     </el-main>
     <el-footer>
       <my-footer></my-footer>
     </el-footer>
   </el-container>
-
 </template>
 
 <script>
@@ -29,7 +28,7 @@ export default {
   components: {
     MyCarousel,
     MyFooter,
-    MyHeader,
+    MyHeader
   }
 };
 </script>
@@ -38,15 +37,22 @@ export default {
 .el-container {
   padding: 0;
   .el-header {
-    margin: 0;
+    margin: 0 auto;
     height: 0.8rem !important;
     background-color: #000;
+    width: 100%;
   }
   .el-main {
     overflow: hidden;
     padding: 0;
+    .img-fluid {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
-  .el-footer{
+  .el-footer {
     padding: 0;
   }
 }

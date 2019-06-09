@@ -1,18 +1,9 @@
 <template>
   <div class="navbar flex">
-    <div class="navbar-brand">
-      <a href="index">
-        <img src="../../public/images/logo.png" alt>
-      </a>
-    </div>
-    <el-menu
-      :default-active="activeIndex"
-      class="el-menu-demo flex"
-      mode="horizontal"
-      @select="handleSelect"
-      background-color="#000"
-      text-color="#fff"
-    >
+    <a href="index" class="navbar-brand">
+      <img src="../../public/images/logo.png" alt>
+    </a>
+    <el-menu class="el-menu-demo flex" mode="horizontal" background-color="#000" text-color="#fff">
       <el-menu-item index="1">
         <router-link to="index">首页</router-link>
       </el-menu-item>
@@ -86,27 +77,29 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   background-color: #000;
-  margin-left: 19%;
-  margin-right: 10%;
+  width: 11.8rem;
   height: 0.8rem;
+  margin: 0 auto;
+  line-height: 0.8rem;
   align-items: center;
+
   .navbar-brand {
     margin-right: 0.8rem;
+    line-height: 0.8rem;
   }
-  .el-menu--horizontal {
+  .el-menu-demo {
     border: 0;
     align-items: center;
     justify-content: flex-start;
     width: 8.8rem;
     height: 0.8rem;
-    .el-submenu {
-      padding: 0;
-      font-size: 0.012rem;
+    .el-submenu__title {
+      padding: 0 0.1rem;
     }
     .el-menu-item {
       padding: 0 0.1rem;
       a {
-        font-size: 0.012rem;
+        font-size: 0.1rem;
       }
     }
   }

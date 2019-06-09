@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container flex">
     <hr class="footer_hr1">
     <div class="footer_words">
       <h2>铂爵旅拍,只用真实客照说话</h2>
@@ -125,6 +125,7 @@ export default {
   margin: 0;
   padding: 0;
   max-width: 19.2rem;
+  flex-direction: column;
   .footer_words {
     padding-top: 3.125%;
     text-align: center;
@@ -197,14 +198,16 @@ export default {
   .footer_banner {
     margin: 0 auto;
     height: auto;
+    width: 100%;
     img {
-      max-width: 19.2rem;
+      max-width: 100%;
     }
   }
   .footer_links {
     display: block;
     width: 100%;
     margin-top: 0.1rem;
+    font-size: 0.1rem;
     opacity: 0.5;
     a {
       font-size: 0.12rem;
