@@ -34,9 +34,9 @@ export default new Router({
       component: Header
     },
     {
-      path:'/photoShow',
-      name:'photoshow',
-      component:photoShow
+      path: '/photoShow',
+      name: 'photoshow',
+      component: photoShow
     }
   ]
 })

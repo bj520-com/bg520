@@ -21,7 +21,6 @@
 import MyCarousel from "../components/Carousel";
 import MyHeader from "../components/Header";
 import MyFooter from "../components/Footer";
-import MyHeader from "../components/Header";
 export default {
   name: "Index",
   data() {
@@ -30,7 +29,7 @@ export default {
   components: {
     MyCarousel,
     MyFooter,
-    MyHeader
+    MyHeader,
   }
 };
 </script>

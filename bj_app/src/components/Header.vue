@@ -1,8 +1,9 @@
 <template>
-<<<<<<< HEAD
   <div class="navbar flex">
     <div class="navbar-brand">
-      <img src="../../public/images/logo.png" alt>
+      <a href="index">
+        <img src="../../public/images/logo.png" alt>
+      </a>
     </div>
     <el-menu
       :default-active="activeIndex"
@@ -14,23 +15,6 @@
     >
       <el-menu-item index="1">
         <router-link to="index">首页</router-link>
-=======
-  <el-menu
-    :default-active="activeIndex"
-    class="el-menu-demo"
-    mode="horizontal"
-    @select="handleSelect"
-    background-color="#000"
-    text-color="#fff"
-  >
-    <el-menu-item index="1">
-      <router-link to="index">首页</router-link>
-    </el-menu-item>
-    <el-submenu index="2" text-color="#fff">
-      <template slot="title">公司简介</template>
-      <el-menu-item index="2-1">
-        <router-link to="index">品牌介绍</router-link>
->>>>>>> a3f552eb4d77097ed8a8f5a413315e2984270d97
       </el-menu-item>
       <el-submenu index="2" text-color="#fff">
         <template slot="title">公司简介</template>
@@ -104,23 +88,25 @@ export default {
   background-color: #000;
   margin-left: 19%;
   margin-right: 10%;
-  height: .8rem;
+  height: 0.8rem;
+  align-items: center;
   .navbar-brand {
-    margin-right: .8rem;
+    margin-right: 0.8rem;
   }
-  .el-menu-demo {
+  .el-menu--horizontal {
     border: 0;
     align-items: center;
     justify-content: flex-start;
     width: 8.8rem;
-    height: .8rem;
-    .el-submenu__title {
-      padding: 0 .1rem;
+    height: 0.8rem;
+    .el-submenu {
+      padding: 0;
+      font-size: 0.012rem;
     }
     .el-menu-item {
-      padding: 0 .1rem;
+      padding: 0 0.1rem;
       a {
-        font-size: .1rem;
+        font-size: 0.012rem;
       }
     }
   }
