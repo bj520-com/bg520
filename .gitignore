@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /bj_server/imgs
-
+/bj_server/public/
 # local env files
 .env.local
 .env.*.local

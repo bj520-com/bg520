@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Carousel from './components/Carousel'
 import Index from './views/Index'
+import photoShow from './views/photoShow'
 Vue.use(Router)
 
 export default new Router({
@@ -31,6 +32,11 @@ export default new Router({
       path: '/Header',
       name: 'header',
       component: Header
+    },
+    {
+      path:'/photoShow',
+      name:'photoshow',
+      component:photoShow
     }
   ]
 })
