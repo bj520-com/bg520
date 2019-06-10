@@ -1,7 +1,9 @@
 <template>
   <el-container>
-    <el-header class="flex">
-      <my-header></my-header>
+    <el-header>
+      <div class="tabbar">
+        <my-header></my-header>
+      </div>
     </el-header>
     <el-main>
       <!-- 首页大轮播图 -->
@@ -20,6 +22,7 @@
 import MyCarousel from "../components/Carousel";
 import MyHeader from "../components/Header";
 import MyFooter from "../components/Footer";
+import HeaderMv from "../components/Header_mv";
 export default {
   name: "Index",
   data() {
@@ -28,7 +31,8 @@ export default {
   components: {
     MyCarousel,
     MyFooter,
-    MyHeader
+    MyHeader,
+    HeaderMv
   }
 };
 </script>
@@ -39,8 +43,9 @@ export default {
   .el-header {
     margin: 0 auto;
     height: 0.8rem !important;
-    background-color: #000;
-    width: 100%;
+    .tabbar {
+      background-color: #000;
+    }
   }
   .el-main {
     overflow: hidden;

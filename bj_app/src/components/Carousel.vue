@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: "myCarousel",
+  name: "",
   data() {
     return {
       swiperOption: {

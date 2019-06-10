@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Header_mv from './components/Header_mv'
 import Carousel from './components/Carousel'
+import City from './components/city_carousel/city_carousel'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
 Vue.use(Router)
@@ -23,6 +24,11 @@ export default new Router({
       path: '/Carousel',
       name: 'carousel',
       component: Carousel
+    },
+    {
+      path: '/City',
+      name: 'city',
+      component: City
     },
     {
       path: '/Footer',
