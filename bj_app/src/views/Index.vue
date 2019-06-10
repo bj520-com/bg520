@@ -43,9 +43,9 @@ export default {
   .el-header {
     margin: 0 auto;
     height: 0.8rem !important;
-    .tabbar {
-      background-color: #000;
-    }
+    padding: 0;
+    width: 100%;
+    background-color: #000;
   }
   .el-main {
     overflow: hidden;

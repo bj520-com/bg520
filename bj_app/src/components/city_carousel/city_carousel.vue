@@ -6,20 +6,6 @@
           <city></city>
         </router-link>
       </swiper-slide>
-      <swiper-slide>
-        <router-link to="index">
-          <city></city>
-        </router-link>
-      </swiper-slide>
-      <swiper-slide>
-        <router-link to="index"></router-link>
-      </swiper-slide>
-      <swiper-slide>
-        <router-link to="index"></router-link>
-      </swiper-slide>
-      <swiper-slide>
-        <router-link to="index"></router-link>
-      </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
       <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
       <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -49,8 +35,18 @@ export default {
       }
     };
   },
+  created() {
+    this.getCityCarousel();
+  },
   components: {
     City
+  },
+  methods: {
+    getCityCarousel() {
+      this.axios.get("city").then(result => {
+        console.log(result);
+      });
+    }
   }
 };
 </script>

@@ -42,6 +42,17 @@ server.get("/photoShow", (req, res) => {
     })
 })
 
+// 功能二：请求主页city轮播图片及文字
+server.get("/city", (req, res) => {
+    // 1.接收脚手架参数
+    //SQL
+    var sql = "SELECT nameEng,nameCHI,car_img FROM city_carousel";
+    pool.query(sql, (err, result) => {
+        if (err) throw err;
+        res.send({ code: 1, msg: 'succeed', data: result });
+    })
+})
+
 
 // 张沥丹
 //客户评价列表

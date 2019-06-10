@@ -1,7 +1,7 @@
 <template>
   <div class="city flex">
     <a href>
-      <img src="../../../public/images/city/4aaee6b255.jpg" class="img-fluid" alt>
+      <!-- <img src="../../../public/images/city/4aaee6b255.jpg" class="img-fluid" alt> -->
       <div class="city_content">
         <p>
           <span class="span1">SANYA</span>

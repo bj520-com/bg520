@@ -7,6 +7,7 @@ import Carousel from './components/Carousel'
 import City from './components/city_carousel/city_carousel'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
+import customserList from './views/customerList.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -24,6 +25,11 @@ export default new Router({
       path: '/Carousel',
       name: 'carousel',
       component: Carousel
+    },
+    {
+      path: '/customserList',
+      name: 'customserlist',
+      component: customserList
     },
     {
       path: '/City',
