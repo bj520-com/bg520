@@ -5,8 +5,10 @@ import Header from './components/Header'
 import Carousel from './components/Carousel'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
+//张沥丹
 import customerList from './views/customerList'
 import cusdetails from './components/customer/cusdetails'
+import evali from './components/customer/evali'
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +45,7 @@ export default new Router({
     // 客户评价列表路由
     {path:'/customerList',name:'customerlist',component:customerList},
     {path:'/customerdetails',name:'cusdetails',component:cusdetails},
+    {path:'/evali',name:'evali',component:evali},
 
   ]
 })

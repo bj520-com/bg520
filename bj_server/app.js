@@ -53,7 +53,7 @@ server.get("/list",(req,res)=>{
     if(!psize){psize=6};
     psize=parseInt(psize);
     var start=parseInt((pnum-1)*psize);
-    var sql="select title,subtitle,city,updateTime,img from customerList limit ?,?";
+    var sql="select id,title,subtitle,city,updateTime,img from customerList limit ?,?";
   
     pool.query(sql,[start,psize],(err,result)=>{
         if(err)throw err;
@@ -64,10 +64,11 @@ server.get("/list",(req,res)=>{
 });
 //客户评价详情
 server.get("/details",(req,res)=>{
-    var cid=req.query.cid;
-    if(!cid){   cid=1     
-    }
+     var cid=req.query.cid;
+     if(!cid){cid=1     
+     }
     var sql="select classnav,title,subtitle,img,details from evaluation where cid=?"
+    // var sql="select classnav,title,subtitle,img,details from evaluation "
     pool.query(sql,[cid],(err,result)=>{
         if(err)throw err;
         if(result.length>0){

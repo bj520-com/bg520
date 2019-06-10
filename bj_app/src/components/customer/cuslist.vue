@@ -49,17 +49,18 @@ export default {
    .title{
        font-size:24px;
        color:#111111;
-       margin-bottom:30px;
+       margin-bottom:23px;
    }
    .city{
        color:#333333;
        font-size:18px
    }
    /* 副标题 */
-   p.subtitle{
+   div>p.subtitle{
        font-family:"宋体";
-       font-size:16px;
-       height:48px;
+       font-size:17px;
+       height:55px;
+       color:#333333;
    }
    /* 日期 */
    .date{

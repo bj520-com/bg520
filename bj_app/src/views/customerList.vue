@@ -1,15 +1,15 @@
 <template>
     <div class="container" >
         <!-- 导航 -->
-         <el-breadcrumb class="nav" separator=">">
+         <el-breadcrumb class="nav" separator=">" >
             <el-breadcrumb-item>您的当前位置: </el-breadcrumb-item>
             <el-breadcrumb-item :to="{path:'/'}">铂爵(伯爵)旅拍婚纱摄影首页</el-breadcrumb-item>
             <el-breadcrumb-item>婚纱摄影评价</el-breadcrumb-item>
         </el-breadcrumb>
         <!-- 客户评价列表 -->
-      <cuslist v-for="(item,index) of list" :imgUrl="'http://127.0.0.1:3000/cuslist/'+item.img" :key=index :title="item.title" :subtitle="item.subtitle" :updateTime="item.updateTime" :city="item.city"></cuslist> 
+      <cuslist v-for="(item,index) of list" :imgUrl="'http://127.0.0.1:3000/cuslist/'+item.img" :key=index :title="item.title" :subtitle="item.subtitle" :updateTime="item.updateTime" :city="item.city" @click.native="skip(item.id)"></cuslist> 
       <!-- 分页 -->
-      <el-pagination layout="prev,pager,next" small :total="30" background :page-size="6" @current-change="loadlist" >
+      <el-pagination layout="prev,pager,next" small :total="30" background :page-size="6" @current-change="loadlist">
       </el-pagination>
     </div>
 </template>
@@ -39,11 +39,17 @@ export default {
            var obj={pnum:pnum,psize:psize}
            this.axios.get("list",{params:obj}).then((result)=>{
                   var list=result.data.data
-                  console.log(list)
                   this.list=list
            })
        },
-     
+       skip(cid){
+           console.log(cid)
+        //    Bus.$emit('send',cid)
+           this.$router.push({
+               path:'/customerdetails',
+               query:{cid}
+               })
+       },
     },
 }
 </script >

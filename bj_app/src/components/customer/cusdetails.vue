@@ -1,7 +1,7 @@
 <template>
     <div class="container" style="border:1px solid #f00">
-         <el-row :gutter="10">
-             <el-col :span="16"  v-for="(item,index) of list" :key="index">
+         <el-row :gutter="10" >
+             <el-col :span="16" v-for="(item,index) of list" :key="index" >
                  <!-- 导航组件 -->
                  <cusnav :classnav="item.classnav" :navtitle="item.title"></cusnav>
                  <!--标题 -->
@@ -10,11 +10,10 @@
                  <!-- 文字和图片 -->
                  <div style="text-align:left" v-for="(item,index) of arr" :key="index">
                      <div class="details">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;{{item.text}}
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{item.text}}
                      </div>
                     <img :src="`http://127.0.0.1:3000/cusdetails/${item.img}`" alt="" style="width:775px">  
                  </div>
-                
                  </el-col>
              <el-col :span="8" style="text-align:right"><img src="../../assets/cuslist/list2.jpg" alt=""></el-col>
          </el-row>
@@ -25,24 +24,31 @@ import cusnav from './cusnav'
 export default {
     data(){
         return{
+            cid:"",
             list:[],
-            arr:[]
+            arr:[],
         }
     },
     created(){
+         this.cid=this.$route.query.cid
          this.loaddetails();
+        //  Bus.$on('send',function(val){this.cid=val})
+          console.log(this.cid)
+        
     },
     methods:{
        loaddetails(){
             var cid=this.cid
             this.axios.get("details",{
-                params:{cid}
+                 params:{cid}
             }).then(result=>{
                 var list=result.data.data
                 this.list=list
                 console.log(list)
                 var strtext=list[0].details
                 var strimgs=list[0].img
+                //  var strtext=list[cid].details
+                //  var strimgs=list[cid].img
                 var  arrtext=strtext.split("|")
                 var  arrimg=strimgs.split(",")
                 var arr=[]
@@ -52,15 +58,16 @@ export default {
                      obj.img=arrimg[i]
                      arr[i]=obj
                }
-               console.log(arrtext,arrimg[0],)
-               console.log(arr)
+               //console.log(arrtext,arrimg[0],)
+               //console.log(arr)
                this.arr=arr
             })
        }
     },
     components:{
         cusnav,
-    }
+    },
+    // props:["cid"]
 }
 </script>
 <style>
