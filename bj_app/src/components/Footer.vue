@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container flex">
     <hr class="footer_hr1">
     <div class="footer_words">
       <h2>铂爵旅拍,只用真实客照说话</h2>
@@ -122,40 +122,42 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  width: 100%;
-  max-width: 1920px;
+  margin: 0;
+  padding: 0;
+  max-width: 19.2rem;
+  flex-direction: column;
   .footer_words {
     padding-top: 3.125%;
     text-align: center;
     letter-spacing: 1px;
     font-family: 思源黑体 CN Light;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    font-size: 0.16rem;
     h2 {
-      font-size: 26px;
+      font-size: 0.26rem;
       margin-bottom: 3.125%;
     }
     p {
       text-align: center;
       margin-top: 0;
-      margin-bottom: 1rem;
+      color: #666;
+      margin-bottom: 0.1rem;
     }
     .footer_city {
-      font-size: 16px;
       display: block;
-      line-height: 32px;
-      margin-bottom: 0px;
+      line-height: 0.32rem;
+      margin-bottom: 0;
       a {
         color: #000;
-        font-size: 16px;
       }
     }
   }
 
   .footer_nav_dash {
-    border-top: 1px dashed #7f7f7f;
+    border-top: 0.01rem dashed #7f7f7f;
     overflow: hidden;
-    height: 1px;
+    height: 0.01rem;
     width: 50%;
     margin: 2.1% auto 1.5625%;
   }
@@ -165,11 +167,10 @@ export default {
     li {
       display: initial;
       text-decoration: underline;
-      font-size: 1.4rem;
       a {
+        font-size: 0.14rem;
         color: #333;
         margin-right: 1%;
-        font-size: 14px;
       }
     }
   }
@@ -180,17 +181,16 @@ export default {
     .footer_copyright_words {
       position: relative;
       text-align: center;
-      font-size: 1.4rem;
-      line-height: 80px;
+      line-height: 0.8rem;
       .spans {
         position: absolute;
         right: 4.1%;
         bottom: 0;
         span.cnzz {
-          width: 20px;
+          width: 0.2rem;
         }
         span {
-          margin-left: 2px;
+          margin-left: 0.02rem;
         }
       }
     }
@@ -198,6 +198,7 @@ export default {
   .footer_banner {
     margin: 0 auto;
     height: auto;
+    width: 100%;
     img {
       max-width: 100%;
     }
@@ -205,13 +206,14 @@ export default {
   .footer_links {
     display: block;
     width: 100%;
-    margin-top: 10px;
-    font-size: 10px;
+    margin-top: 0.1rem;
+    font-size: 0.1rem;
     opacity: 0.5;
     a {
+      font-size: 0.12rem;
       color: #666666;
       background-color: transparent;
-      margin-left: 2px;
+      margin-left: 0.02rem;
     }
   }
 }
