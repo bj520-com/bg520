@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "Header_mv",
+  name: "HeaderMv",
   data() {
     return {
       myWidth: window.innerWidth + "px"

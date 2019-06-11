@@ -3,7 +3,7 @@
     <swiper :options="swiperOption">
       <swiper-slide>
         <router-link to="index">
-          <city></city>
+          <!-- <city></city> -->
         </router-link>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import City from "./city";
+import myCity from "./city";
 export default {
   data() {
     return {
@@ -39,7 +39,7 @@ export default {
     this.getCityCarousel();
   },
   components: {
-    City
+    // myCity
   },
   methods: {
     getCityCarousel() {
