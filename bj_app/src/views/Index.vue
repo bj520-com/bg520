@@ -22,7 +22,7 @@
 import MyCarousel from "../components/Carousel";
 import MyHeader from "../components/Header";
 import MyFooter from "../components/Footer";
-import HeaderMv from "../components/Header_mv";
+import HeaderMv from "../components/HeaderMv";
 export default {
   name: "Index",
   data() {
@@ -45,7 +45,6 @@ export default {
     height: 0.8rem !important;
     padding: 0;
     width: 100%;
-    background-color: #000;
   }
   .el-main {
     overflow: hidden;

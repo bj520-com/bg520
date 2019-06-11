@@ -83,7 +83,7 @@ CREATE TABLE city_carousel(
    nameCHI VARCHAR(64),     #中文标题 
    car_img VARCHAR(10)     #图片路径字符串
 );
-INSERT INTO evaluation VALUES
+INSERT INTO city_carousel VALUES
 (NULL,'SANYA','三亚','1.jpg'),(NULL,'XIAMEN','厦门','2.jpg'),(NULL,'LIJIANG','丽江','3.jpg'),
 (NULL,'DALI','大理','4.jpg'),(NULL,'QINDAO','青岛','5.jpg'),(NULL,'DALIAN','大连','6.jpg'),
 (NULL,'GUILIN','桂林','7.jpg'),(NULL,'SHENZHEN','深圳','8.jpg'),(NULL,'HONGKONG','香港','9.jpg'),
