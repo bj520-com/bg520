@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     getCityCarousel() {
-      this.axios.get("city").then(result => {
+      this.axios.get("/city").then(result => {
         console.log(result);
       });
     }
