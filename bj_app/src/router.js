@@ -44,7 +44,7 @@ export default new Router({
     },
     // 客户评价列表路由
     {path:'/customerList',name:'customerlist',component:customerList},
-    {path:'/customerdetails',name:'cusdetails',component:cusdetails},
+    {path:'/customerdetails/:cid',name:'cusdetails',component:cusdetails,props:true},
     {path:'/evali',name:'evali',component:evali},
 
   ]

@@ -75,4 +75,22 @@ server.get("/details",(req,res)=>{
             res.send({code:1,msg:"查询成功",data:result})
         }else{res.send({code:-1,msg:"查询失败"})}
     })
-})
+});
+//details 右边列表图
+server.get("/li",(req,res)=>{
+    console.log(req.query)
+     var psize=req.query.psize;
+    var pnum=req.query.pnum;
+    if(!pnum){pnum=1};
+     if(!psize){psize=3};
+     psize=parseInt(psize);
+     var start=parseInt((pnum-1)*psize);
+     var sql="select id,title,subtitle,img from customerList limit ?,?";
+    // var sql="select id title,subtitle,img from customerList where id in ";
+    pool.query(sql,[start,psize],(err,result)=>{
+        if(err)throw err;
+        if(result.length>0){
+            res.send({code:1,msg:"查询成功",data:result})
+        }else{res.send({code:-1,msg:"查询失败"})}
+    })
+});

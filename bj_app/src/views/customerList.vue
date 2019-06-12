@@ -45,10 +45,7 @@ export default {
        skip(cid){
            console.log(cid)
         //    Bus.$emit('send',cid)
-           this.$router.push({
-               path:'/customerdetails',
-               query:{cid}
-               })
+               this.$router.push(`/customerdetails/${cid}`)
        },
     },
 }
