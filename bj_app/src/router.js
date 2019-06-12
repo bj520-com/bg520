@@ -4,12 +4,12 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import HeaderMv from './components/HeaderMv'
 import Carousel from './components/Carousel'
-import CityList from './components/CityList'
-import cusdetails from './components/customer/cusdetails'
-import evali from './components/customer/evali'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
+//张沥丹
 import customerList from './views/customerList'
+import cusdetails from './components/customer/cusdetails'
+import evali from './components/customer/evali'
 Vue.use(Router)
 
 export default new Router({
@@ -23,18 +23,31 @@ export default new Router({
       name: 'index',
       component: Index
     },
-
     {
-      path: '/customerList',
+      path: '/Carousel',
+      name: 'carousel',
+      component: Carousel
+    },
+    {
+      path: '/customserList',
       name: 'customserlist',
-      component: customerList
+      component: customserList
     },
     {
       path: '/CityList',
       name: 'citylist',
       component: CityList
     },
-
+    {
+      path: '/Footer',
+      name: 'footer',
+      component: Footer
+    },
+    {
+      path: '/Header',
+      name: 'header',
+      component: Header
+    },
     {
       path: '/photoShow',
       name: 'photoshow',
