@@ -11,8 +11,19 @@
       <div class="img-fluid">
         <img src="../../public/images/index/index_city.jpg" alt>
       </div>
-      <div class="city_carousel">
+      <div class="city flex">
+        <CityList/>
         <city-carousel/>
+      </div>
+      <div class="container-fluid">
+        <div class="news_spring">
+          <a href="https://app.bj520.com/">
+            <img class="img-fluid" src="../../public/images/index/new-photo.jpg" alt>
+          </a>
+          <a href="https://www.bj520.com/page-47.html">
+            <img class="news_spring_look" src="../../public/images/index/look.png" alt>
+          </a>
+        </div>
       </div>
     </el-main>
     <el-footer>
@@ -27,6 +38,7 @@ import MyHeader from "../components/Header";
 import MyFooter from "../components/Footer";
 import HeaderMv from "../components/HeaderMv";
 import CityCarousel from "../components/CityCarousel";
+import CityList from "../components/CityList";
 export default {
   name: "Index",
   data() {
@@ -37,7 +49,8 @@ export default {
     MyFooter,
     MyHeader,
     HeaderMv,
-    CityCarousel
+    CityCarousel,
+    CityList
   }
 };
 </script>
@@ -54,10 +67,25 @@ export default {
   .el-main {
     overflow: hidden;
     padding: 0;
-    .img-fluid {
-      img {
+    .city {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      div {
+        margin-top: 5%;
+      }
+    }
+    .container-fluid {
+      .news_spring {
         width: 100%;
-        height: auto;
+        margin-top: 1.2rem;
+        position: relative;
+        .news_spring_look {
+          position: absolute;
+          width: 9%;
+          top: -10%;
+          right: 12.5%;
+        }
       }
     }
   }

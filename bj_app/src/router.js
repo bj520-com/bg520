@@ -4,10 +4,10 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import HeaderMv from './components/HeaderMv'
 import Carousel from './components/Carousel'
+import CityList from './components/CityList'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
 import customserList from './views/customerList.vue'
-import CityList from './components/CityList.vue'
 Vue.use(Router)
 
 export default new Router({
