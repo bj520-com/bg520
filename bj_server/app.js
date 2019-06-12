@@ -18,7 +18,7 @@ server.use(express.static("public"));
 const cors = require('cors');
 server.use(cors({
     origin: ["http://127.0.0.1:8080", "http://localhost:8080"],
-3    // origin: [],
+    // origin: [],
     credentials: true //验证
 }));
 // 6.添加session功能
