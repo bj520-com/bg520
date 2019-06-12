@@ -1,14 +1,12 @@
 <template>
     <div class=" container p1" >
        <div class="evali p2" >
-           <div>
                <p class="title">客户评价</p>
                <div class="rightimg" v-for="(item,index) of list" :key="index" @click="evali(item.id)"> 
                    <img :src="`http://127.0.0.1:3000/cuslist/${item.img}`" alt=""   >
                    <p>{{item.subtitle}}
                    </p>
                </div>
-           </div> 
        </div>
  </div>
 </template>
