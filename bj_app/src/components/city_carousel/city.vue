@@ -1,12 +1,12 @@
 <template>
   <div class="city flex">
     <a href>
-      <!-- <img src="../../../public/images/city/4aaee6b255.jpg" class="img-fluid" alt> -->
+      <img :src="img" class="img-fluid" alt>
       <div class="city_content">
         <p>
-          <span class="span1">SANYA</span>
+          <span class="span1">{{name_ENG}}</span>
           &nbsp;
-          <span class="span2">三亚</span>
+          <span class="span2">{{name_CHI}}</span>
         </p>
         <span>最新客照展示</span>
         <div class="tsgd">点击查看</div>
@@ -19,6 +19,20 @@
 export default {
   data() {
     return {};
+  },
+  props: {
+    img: {
+      type: String,
+      dafault: ""
+    },
+    name_ENG: {
+      type: String,
+      dafault: ""
+    },
+    name_CHI: {
+      type: String,
+      dafault: ""
+    }
   }
 };
 </script>

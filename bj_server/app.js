@@ -49,7 +49,6 @@ server.get("/photoShow", (req, res) => {
 
 // 功能二：请求主页city轮播图片及文字
 server.get("/city", (req, res) => {
-    console.log(1)
     var sql = "SELECT nameEng,nameCHI,car_img FROM city_carousel";
     pool.query(sql, (err, result) => {
         if (err) throw err;

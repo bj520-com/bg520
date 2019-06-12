@@ -3,7 +3,14 @@
     <swiper :options="swiperOption">
       <swiper-slide>
         <router-link to="index">
-          <!-- <city></city> -->
+          <city
+            class="city"
+            v-for="(item, i) in list"
+            :key="i"
+            :img="`http://127.0.0.1:3000/city/${item.car_img}`"
+            :name_ENG="item.name_Eng"
+            :name_CHI="item.name_CHI"
+          />
         </router-link>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -14,7 +21,7 @@
 </template>
 
 <script>
-import myCity from "./city";
+import city from "./city";
 export default {
   data() {
     return {
@@ -32,23 +39,25 @@ export default {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"
         }
-      }
+      },
+      list: [],
+      img: "",
+      name_ENG: "",
+      name_CHI: ""
     };
   },
   created() {
     this.getCityCarousel();
   },
   components: {
-    // myCity
+    city
   },
   methods: {
     getCityCarousel() {
-<<<<<<< HEAD
-      this.axios.get("http://127.0.0.1:3000/city/").then(result => {
-=======
-      this.axios.get("/city").then(result => {
->>>>>>> 2a54d2bb7efcb1500a1e1cbc2622bfeed69d6a1f
-        console.log(result);
+      this.axios.get("city/").then(result => {
+        // console.log(result.data.data[1].nameEng);
+        this.list = result.data.data;
+        console.log(this.list);
       });
     }
   }
@@ -58,5 +67,9 @@ export default {
 <style lang="scss" scoped>
 .city_carousel {
   margin-top: 10.1%;
+  .city {
+    width: 4.78rem;
+    height: 100%;
+  }
 }
 </style>
