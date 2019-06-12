@@ -11,6 +11,9 @@
       <div class="img-fluid">
         <img src="../../public/images/index/index_city.jpg" alt>
       </div>
+      <div class="city_carousel">
+        <city-carousel/>
+      </div>
     </el-main>
     <el-footer>
       <my-footer></my-footer>
@@ -23,6 +26,7 @@ import MyCarousel from "../components/Carousel";
 import MyHeader from "../components/Header";
 import MyFooter from "../components/Footer";
 import HeaderMv from "../components/HeaderMv";
+import CityCarousel from "../components/CityCarousel";
 export default {
   name: "Index",
   data() {
@@ -32,7 +36,8 @@ export default {
     MyCarousel,
     MyFooter,
     MyHeader,
-    HeaderMv
+    HeaderMv,
+    CityCarousel
   }
 };
 </script>
