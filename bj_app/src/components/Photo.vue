@@ -36,6 +36,7 @@
 .img-father{
   width: 33%;
   margin-top: 36px;
+  margin-right: 0px;
   transition: all .3s ease-out 0s;
 
   .image{

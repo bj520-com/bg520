@@ -41,3 +41,11 @@ server.get("/photoShow", (req, res) => {
         res.send({ code: 1, msg: 'succeed', data: result });
     })
 })
+
+//功能二：请求客照列表
+server.get("/photoList", (req, res) => {
+    pool.query("SELECT pics,ptime,pname FROM customerPhoto", (err, result) => {
+        if (err) throw err;
+        res.send({ code: 1, msg: "succeed", data: result });
+    })
+})
