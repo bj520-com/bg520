@@ -2,7 +2,7 @@
   <div>
     <ul class="city_list">
       <li class="city_item" v-for="(item, i) in nameCHI" :key="i">
-        <div v-bind:class="{active:isActive}">
+        <div>
           <a href="index">{{item}}</a>
         </div>
       </li>
@@ -15,8 +15,7 @@ export default {
   data() {
     return {
       list: [],
-      nameCHI: [],
-      isActive: true
+      nameCHI: []
     };
   },
   created() {
@@ -29,10 +28,6 @@ export default {
         this.list = result.data.data;
         for (var i = 0; i < this.list.length; i++) {
           this.nameCHI.push(this.list[i].nameCHI);
-          if (i != 0) {
-            this.isActive = false;
-          }
-          console.log(this.isActive);
         }
         this.nameCHI = Array.from(new Set(this.nameCHI));
       });

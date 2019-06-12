@@ -59,6 +59,18 @@ server.get("/city", (req, res) => {
         });
     })
 })
+// 功能二：请求主页customer轮播图片及文字
+server.get("/customerphoto", (req, res) => {
+    var sql = "SELECT pname,ptime,pics FROM customerphoto WHERE cid!=1";
+    pool.query(sql, (err, result) => {
+        if (err) throw err;
+        res.send({
+            code: 1,
+            msg: 'succeed',
+            data: result
+        });
+    })
+})
 
 
 // 张沥丹

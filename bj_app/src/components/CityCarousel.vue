@@ -58,7 +58,7 @@ export default {
       this.axios.get("city/").then(result => {
         // console.log(result.data.data[1].nameEng);
         this.list = result.data.data;
-        console.log(this.list);
+        // console.log(this.list);
       });
     }
   }

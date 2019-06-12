@@ -5,6 +5,7 @@ import Header from './components/Header'
 import HeaderMv from './components/HeaderMv'
 import Carousel from './components/Carousel'
 import CityList from './components/CityList'
+import CustomerCarousel from './components/CustomerCarousel'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
 import customserList from './views/customerList.vue'
@@ -25,6 +26,11 @@ export default new Router({
       path: '/Carousel',
       name: 'carousel',
       component: Carousel
+    },
+    {
+      path: '/CustomerCarousel',
+      name: 'customercarousel',
+      component: CustomerCarousel
     },
     {
       path: '/customserList',
