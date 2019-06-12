@@ -69,6 +69,7 @@ export default {
 .swiper-container {
   width: 100%;
   height: 100%;
+  margin-top: 10.1%;
   .swiper-slide {
     width: 4.78rem;
     height: 100%;
