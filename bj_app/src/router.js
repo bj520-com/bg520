@@ -42,7 +42,8 @@ export default new Router({
         {
             path: '/photoList',
             name: "photolist",
-            component: photoList
+            component: photoList,
+            props: true
         }
     ]
 })

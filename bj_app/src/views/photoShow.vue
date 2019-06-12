@@ -10,7 +10,7 @@
           <a href="Index">铂爵(伯爵)旅拍婚纱摄影</a>
         </el-breadcrumb-item>
         <el-breadcrumb-item>
-          <a href="Index">客户婚纱照</a>
+          <a href="#/photolist">客户婚纱照</a>
         </el-breadcrumb-item>
         <el-breadcrumb-item class="myfont">{{tempTitle}}</el-breadcrumb-item>
       </el-breadcrumb>
@@ -60,10 +60,11 @@ export default {
       msg:'',
       tempTitle:'8月第4季最新客照',
       show:false
-    };
+    }
   },
   components:{
-    myHeader},
+    myHeader
+  },
   created() {
     this.loadPhoto();
   },

@@ -44,7 +44,13 @@ server.get("/photoShow", (req, res) => {
 
 //功能二：请求客照列表
 server.get("/photoList", (req, res) => {
-    pool.query("SELECT pics,ptime,pname FROM customerPhoto", (err, result) => {
+    var pno = req.query.pno;
+    var psize = req.query.size;
+    if (!pno) { pno = 1 }
+    if (!psize) { psize = 9 }
+    var start = parseInt((pno - 1) * psize);
+    var count = parseInt(psize);
+    pool.query("SELECT cid,pics,ptime,pname FROM customerPhoto LIMIT ?,?", [start, count], (err, result) => {
         if (err) throw err;
         res.send({ code: 1, msg: "succeed", data: result });
     })

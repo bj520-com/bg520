@@ -3,7 +3,7 @@
     <el-row>
       <!-- <el-col :span="12" :offset="index > 0 ? 2 : 0"> -->
         <el-card :body-style="{ padding: '0px' }" class="img-father">
-          <a href="#">
+          <a :href="listHref">
             <img :src="imgUrl" class="image">
             <!-- <img src="cuspho/mayfourth/1.jpg" class="image"> -->
             <div style="padding: 14px;" class="title-father">
@@ -27,16 +27,16 @@
     },
     props:{
       imgUrl:{default:""},
-      imgTitle:{default:""}
+      imgTitle:{default:""},
+      listHref:{default:""}
     }
   }
 </script>
 
 <style lang="scss" scoped>
 .img-father{
-  width: 33%;
-  margin-top: 36px;
-  margin-right: 0px;
+  width: 3.95rem;
+  margin: 36px 2px 0px;
   transition: all .3s ease-out 0s;
 
   .image{
@@ -62,8 +62,8 @@
   }
 }
 .img-father:hover{
-  box-shadow: 0 0 18px #666;
-  transform: scale(1.01);
+  box-shadow: 0 0 15px #666;
+  transform: scale(1.005);
   .el-icon-right{
     background: #e7090b;
     border-radius: 50%;
