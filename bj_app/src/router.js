@@ -6,10 +6,8 @@ import HeaderMv from './components/HeaderMv'
 import Carousel from './components/Carousel'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
-//张沥丹
-import customerList from './views/customerList'
-import cusdetails from './components/customer/cusdetails'
-import evali from './components/customer/evali'
+import customserList from './views/customerList.vue'
+import CityList from './components/CityList.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -49,27 +47,14 @@ export default new Router({
       component: Header
     },
     {
+      path: '/HeaderMv',
+      name: 'headermv',
+      component: HeaderMv
+    },
+    {
       path: '/photoShow',
       name: 'photoshow',
       component: photoShow
-    },
-    // 客户评价列表路由
-    {
-      path: '/customerList',
-      name: 'customerlist',
-      component: customerList
-    },
-    {
-      path: '/customerdetails/:cid',
-      name: 'cusdetails',
-      component: cusdetails,
-      props: true
-    },
-    {
-      path: '/evali',
-      name: 'evali',
-      component: evali
-    },
-
+    }
   ]
 })
