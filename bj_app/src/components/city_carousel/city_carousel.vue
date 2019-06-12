@@ -43,7 +43,11 @@ export default {
   },
   methods: {
     getCityCarousel() {
+<<<<<<< HEAD
       this.axios.get("http://127.0.0.1:3000/city/").then(result => {
+=======
+      this.axios.get("/city").then(result => {
+>>>>>>> 2a54d2bb7efcb1500a1e1cbc2622bfeed69d6a1f
         console.log(result);
       });
     }
