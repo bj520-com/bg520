@@ -35,15 +35,15 @@ export default new Router({
             component: Header
         },
         {
-            path: '/photoShow',
+            path: '/photoShow/:teng',
             name: 'photoshow',
-            component: photoShow
+            component: photoShow,
+            props: true
         },
         {
             path: '/photoList',
             name: "photolist",
-            component: photoList,
-            props: true
+            component: photoList
         }
     ]
 })

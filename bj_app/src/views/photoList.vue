@@ -1,5 +1,6 @@
 <template>
   <div>
+    <my-header></my-header>
     <div class="container">
       <!-- 顶部面包屑导航 -->
       <div class="t-breadcrumbs">
@@ -15,25 +16,26 @@
       </div>
       <!-- 图片列表 -->
       <div class="photoList flex">
-        <my-photo v-for="(item,i) of list" :key="i" :imgUrl="`http://127.0.0.1:3000/cuspho/${item.pname}/${item.pics[0]}.jpg`" :imgTitle="`${item.ptime}`" :listHref="`http://127.0.0.1:8080/#/photolist/${item.cid}`"></my-photo>
+        <my-photo v-for="(item,i) of list" :key="i" @click="clickPhoto($event)" :data-msg="i" :imgUrl="`http://127.0.0.1:3000/cuspho/${item.pname}/${item.pics[0]}.jpg`" :imgTitle="`${item.ptime}`" :listHref="`http://127.0.0.1:8080/#/photoshow/${item.cid}`"></my-photo>
       </div>
       <!-- 底部分页 -->
       <el-pagination :page-size="9" :pager-count="6" layout="prev, pager, next" :total="90" :prev-text="lpage" :next-text="rpage" @current-change="loadPhoto">
       </el-pagination>
     </div>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
-import MyPhoto from '../components/Photo.vue'
+import myPhoto from '../components/Photo.vue'
+import myHeader from '../components/Header.vue'
+import myFooter from '../components/Footer.vue'
   export default {
     data(){
       return {
         lpage:"上一页",
         rpage:"下一页",
         list:[],
-        pno:1,
-        psize:9
       }
     },
     components:{
@@ -44,16 +46,20 @@ import MyPhoto from '../components/Photo.vue'
     },
     methods: {
       loadPhoto(pno){
-        this.pno=pno;
-        this.axios.get("photoList",{params:{pno:this.pno,psize:this.psize}}).then(result=>{
+        this.axios.get("photoList",{params:{pno}}).then(result=>{
           // console.log(result.data.data[0].pics);
           // for(var i=0;i<result.length;i++){
           //   result.data.data[i].pics=result.data.data[i].pics.split(",");
           //    console.log(result.data.data[i].pics);
           // }
           this.list=result.data.data;
+          console.log(this.list);
         })
       },
+      clickPhoto(e){
+        var x= e.target.dataset.msg;
+        return x;
+      }
     },
   }
 </script>
