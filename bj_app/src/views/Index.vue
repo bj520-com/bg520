@@ -26,6 +26,11 @@
         </div>
       </div>
       <!-- 旅拍城市轮播 -->
+      <div>
+        <customer-carousel></customer-carousel>
+      </div>
+      <!-- 微电影 -->
+      <global-tranvel></global-tranvel>
     </el-main>
     <el-footer>
       <my-footer></my-footer>
@@ -40,6 +45,8 @@ import MyFooter from "../components/Footer";
 import HeaderMv from "../components/HeaderMv";
 import CityCarousel from "../components/CityCarousel";
 import CityList from "../components/CityList";
+import CustomerCarousel from "../components/CustomerCarousel";
+import GlobalTranvel from "../components/GlobalTranvel";
 export default {
   name: "Index",
   data() {
@@ -51,7 +58,9 @@ export default {
     MyHeader,
     HeaderMv,
     CityCarousel,
-    CityList
+    CityList,
+    CustomerCarousel,
+    GlobalTranvel
   }
 };
 </script>

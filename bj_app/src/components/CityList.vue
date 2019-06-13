@@ -29,8 +29,12 @@ export default {
         for (var i = 0; i < this.list.length; i++) {
           this.nameCHI.push(this.list[i].nameCHI);
         }
+        //去掉数组重复元素
         this.nameCHI = Array.from(new Set(this.nameCHI));
       });
+    },
+    loadCity() {
+      console.log(123);
     }
   }
 };

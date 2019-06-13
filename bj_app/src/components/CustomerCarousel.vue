@@ -68,7 +68,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   box-sizing: border-box;
-  width: 11.8rem;
+  max-width: 11.8rem;
   .brand_words {
     margin-top: 9.3%;
     margin-bottom: 5%;

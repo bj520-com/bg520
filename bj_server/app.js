@@ -35,8 +35,11 @@ server.listen(3000);
 server.get("/photoShow", (req, res) => {
     // 1.接收脚手架参数
     var pname = req.query.pname == "" ? augfourth : req.query.pname;
+    // var cid = req.query.cid //== "" ? 1 : req.query.cid;
     //SQL
-    var sql = "SELECT pics FROM customerPhoto WHERE pname=?";
+    // var sql = "SELECT pics FROM customerPhoto WHERE pname=?";
+    var sql = "SELECT pics,cid FROM customerPhoto WHERE pname=?";
+    // var sql = "SELECT pics,ptime,pname FROM customerPhoto WHERE cid=?";
     pool.query(sql, [pname], (err, result) => {
         if (err) throw err;
         res.send({
@@ -45,9 +48,31 @@ server.get("/photoShow", (req, res) => {
             data: result
         });
     })
+    // pool.query(sql, [cid], (err, result) => {
+    //     if (err) throw err;
+    //     res.send({ code: 1, msg: 'succeed', data: result });
+    // })
 })
 
-// 功能二：请求主页city轮播图片及文字
+//功能二：请求客照列表
+server.get("/photoList", (req, res) => {
+    var pno = req.query.pno;
+    var psize = 9;
+    if (!pno) {
+        pno = 1
+    }
+    var start = parseInt((pno - 1) * psize);
+    pool.query("SELECT cid,pics,ptime,pname FROM customerPhoto LIMIT ?,?", [start, psize], (err, result) => {
+        if (err) throw err;
+        res.send({
+            code: 1,
+            msg: "succeed",
+            data: result
+        });
+    })
+})
+
+// 请求主页city轮播图片及文字
 server.get("/city", (req, res) => {
     var sql = "SELECT nameEng,nameCHI,car_img FROM city_carousel";
     pool.query(sql, (err, result) => {
@@ -59,7 +84,7 @@ server.get("/city", (req, res) => {
         });
     })
 })
-// 功能二：请求主页customer轮播图片及文字
+// 请求主页customer轮播图片及文字
 server.get("/customerphoto", (req, res) => {
     var sql = "SELECT pname,ptime,pics FROM customerphoto WHERE cid!=1";
     pool.query(sql, (err, result) => {

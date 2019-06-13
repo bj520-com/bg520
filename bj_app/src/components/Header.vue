@@ -45,7 +45,7 @@
           <router-link to="index">旅拍城市</router-link>
         </el-menu-item>
         <el-menu-item index="5">
-          <router-link to="index">客照欣赏</router-link>
+          <router-link to="/photoshow/1">客照欣赏</router-link>
         </el-menu-item>
         <el-menu-item index="6">
           <router-link to="index">客户微电影</router-link>
