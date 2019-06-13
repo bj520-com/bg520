@@ -10,7 +10,7 @@
       <swiper :options="swiperOption" ref="mySwiper">
         <swiper-slide v-for="(item,i) in list" :key="i">
           <div class="flex">
-            <a :href="`http://127.0.0.1:8080/#/photoshow/${item.pname}/`">
+            <a :href="`http://127.0.0.1:8080/#/photoshow/${item.cid}/`">
               <img
                 :src="`http://127.0.0.1:3000/cuspho/${item.pname}/${item.pics}`"
                 class="img-fluid"

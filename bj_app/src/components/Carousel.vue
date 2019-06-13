@@ -18,7 +18,7 @@
         </router-link>
       </swiper-slide>
       <swiper-slide>
-        <router-link to="index">
+        <router-link to="">
           <img src="../../public/images/carousel/4.jpg" alt>
         </router-link>
       </swiper-slide>

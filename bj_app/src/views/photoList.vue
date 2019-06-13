@@ -9,7 +9,7 @@
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item>
             您当前位置：
-            <a href="Index">铂爵(伯爵)旅拍婚纱摄影</a>
+            <a href="/">铂爵(伯爵)旅拍婚纱摄影</a>
           </el-breadcrumb-item>
           <el-breadcrumb-item>
             <a href="Index">客户婚纱照</a>
@@ -75,10 +75,7 @@ export default {
         console.log(this.list);
       });
     },
-    clickPhoto(e) {
-      var x = e.target.dataset.msg;
-      return x;
-    }
+    
   }
 };
 </script>

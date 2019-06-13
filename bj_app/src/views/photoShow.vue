@@ -7,7 +7,7 @@
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item>
             您当前位置：
-            <a href="Index">铂爵(伯爵)旅拍婚纱摄影</a>
+            <a href="/">铂爵(伯爵)旅拍婚纱摄影</a>
           </el-breadcrumb-item>
           <el-breadcrumb-item>
             <a href="#/photolist">客户婚纱照</a>
@@ -19,7 +19,7 @@
       <div class="t-jtweek-tj">
         <ul>
           <li v-for="(item,i) of timeList" :key="i">
-            <router-link to="photoShow">
+            <router-link to="">
               <div @click="photoShow($event)" :data-msg="i" class="t-photo-week-tj">{{item.tchs}}</div>
             </router-link>
           </li>
