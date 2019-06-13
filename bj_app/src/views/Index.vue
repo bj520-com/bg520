@@ -8,8 +8,8 @@
     <el-main>
       <!-- 首页大轮播图 -->
       <my-carousel></my-carousel>
-      <div class="img-fluid">
-        <img src="../../public/images/index/index_city.jpg" alt>
+      <div>
+        <img class="img-fluid" src="../../public/images/index/index_city.jpg" alt>
       </div>
       <div class="city flex">
         <CityList/>

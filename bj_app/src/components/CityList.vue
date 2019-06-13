@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="city_list">
+    <ul class="city_list flex">
       <li class="city_item" v-for="(item, i) in nameCHI" :key="i">
         <div>
           <a href="index">{{item}}</a>
@@ -38,9 +38,12 @@ export default {
 
 <style lang="scss" scoped>
 .city_list {
-  width: 11.8rem;
+  max-width: 11.8rem;
   text-align: center;
   padding: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   .city_item {
     box-sizing: border-box;
     margin: 0 0.07rem 0.2rem;

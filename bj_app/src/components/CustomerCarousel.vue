@@ -10,21 +10,19 @@
       <swiper :options="swiperOption" ref="mySwiper">
         <swiper-slide v-for="(item,i) in list" :key="i">
           <div class="flex">
-            <a :href="`#/photoshow/${item.pname}/`">
+            <a :href="`http://127.0.0.1:8080/#/photoshow/${item.pname}/`">
               <img
                 :src="`http://127.0.0.1:3000/cuspho/${item.pname}/${item.pics}`"
                 class="img-fluid"
                 alt
               >
-              <div class="city_content">
+              <div class="content">
                 <p class="guest-photo-text1">LATEST GUESTBOOK</p>
                 <p class="guest-photo-text2">{{item.ptime}}</p>
               </div>
             </a>
           </div>
         </swiper-slide>
-        <div class="swiper-button-prev swiper-button-black" slot="button-prev"></div>
-        <div class="swiper-button-next swiper-button-black" slot="button-next"></div>
       </swiper>
     </div>
   </div>
@@ -37,16 +35,12 @@ export default {
       swiperOption: {
         slidesPerView: 4,
         slidesPerGroup: 4,
-        loopFillGroupWithBlank: true,
+        grabCursor: true,
+        // loopFillGroupWithBlank: true,
         autoplay: {
           delay: 3000,
           stopOnLastSlide: false,
           disableOnInteraction: false
-        },
-        loop: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
         }
       },
       list: []
@@ -73,9 +67,11 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  box-sizing: border-box;
   width: 11.8rem;
   .brand_words {
     margin-top: 9.3%;
+    margin-bottom: 5%;
     text-align: center;
     h1 {
       font-family: Didot;
@@ -102,12 +98,29 @@ export default {
     overflow: hidden;
     padding: 0;
     z-index: 1;
-    box-sizing: border-box;
-    .swiper-slide {
-      margin-right: 0.2rem;
-      width: 2.8rem;
-      height: 100%;
-      box-sizing: border-box;
+    .swiper-wrapper {
+      position: relative;
+      .swiper-slide {
+        margin-right: 0.2rem;
+        width: 2.8rem !important;
+        height: 100%;
+        .content {
+          color: #212529;
+          text-align: center;
+          font-size: 0.16rem;
+          .guest-photo-text1 {
+            margin-bottom: 4%;
+            margin-top: 11%;
+            font-family: Myriad Pro;
+            font-weight: normal;
+            letter-spacing: 1px;
+          }
+          .guest-photo-text2 {
+            font-family: "宋体";
+            letter-spacing: 1px;
+          }
+        }
+      }
     }
   }
 }

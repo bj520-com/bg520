@@ -9,14 +9,20 @@ import CustomerCarousel from './components/CustomerCarousel'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
 import customserList from './views/customerList.vue'
+import customerList from './views/customerList'
+import cusdetails from './components/customer/cusdetails'
+import evali from './components/customer/evali'
+
+
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
-      path: '/',
-      name: 'index',
-      component: Index
-    },
+  routes: [
+    // {
+    //   path: '/',
+    //   name: 'index',
+    //   component: Index
+    // },
     {
       path: '/Index',
       name: 'index',
@@ -61,6 +67,20 @@ export default new Router({
       path: '/photoShow',
       name: 'photoshow',
       component: photoShow
-    }
+    },
+    {
+      path: '/customerList',
+      name: 'customerlist',
+      component: customerList
+    }, {
+      path: '/customerdetails/:cid',
+      name: 'cusdetails',
+      component: cusdetails,
+      props: true
+    }, {
+      path: '/evali',
+      name: 'evali',
+      component: evali
+    },
   ]
 })

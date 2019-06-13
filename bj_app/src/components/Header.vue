@@ -96,14 +96,17 @@ export default {
       margin-right: 0.8rem;
       line-height: 0.7rem;
     }
-    .el-menu-demo {
+    .el-menu--horizontal {
       border: 0;
       align-items: center;
       justify-content: flex-start;
       width: 8.8rem;
       height: 0.8rem;
-      .el-submenu__title {
-        padding: 0 0.1rem;
+      .el-submenu {
+        .el-submenu__title {
+          padding: 0 0.1rem;
+          border-bottom: 0;
+        }
       }
       .el-menu-item {
         border: 0;
