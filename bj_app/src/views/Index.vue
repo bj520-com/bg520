@@ -30,7 +30,13 @@
         <customer-carousel></customer-carousel>
       </div>
       <!-- 微电影 -->
-      <global-tranvel></global-tranvel>
+      <global-travel></global-travel>
+      <!-- 返回顶部 -->
+      <el-backtop :bottom="26" :right="200">
+        <div v-show="show" class="backTop">
+          <i class="el-icon-arrow-up"></i>
+        </div>
+      </el-backtop>
     </el-main>
     <el-footer>
       <my-footer></my-footer>
@@ -46,11 +52,22 @@ import HeaderMv from "../components/HeaderMv";
 import CityCarousel from "../components/CityCarousel";
 import CityList from "../components/CityList";
 import CustomerCarousel from "../components/CustomerCarousel";
-import GlobalTranvel from "../components/GlobalTranvel";
+import GlobalTravel from "../components/GlobalTravel";
 export default {
   name: "Index",
   data() {
-    return {};
+    return {
+      show: false
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.show = true;
+      // console.log(this.show);
+    }
   },
   components: {
     MyCarousel,
@@ -60,7 +77,7 @@ export default {
     CityCarousel,
     CityList,
     CustomerCarousel,
-    GlobalTranvel
+    GlobalTravel
   }
 };
 </script>
@@ -97,6 +114,18 @@ export default {
           right: 12.5%;
         }
       }
+    }
+    // 返回顶部
+
+    .backTop {
+      height: 100%;
+      width: 100%;
+      background-color: #414141;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+      text-align: center;
+      line-height: 40px;
+      color: #ccc;
+      font-size: 30px;
     }
   }
   .el-footer {

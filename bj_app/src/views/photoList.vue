@@ -1,8 +1,6 @@
 <template>
-  <el-container>
-    <el-header>
-      <my-header></my-header>
-    </el-header>
+  <div>
+    <my-header></my-header>
     <div class="container">
       <!-- 顶部面包屑导航 -->
       <div class="t-breadcrumbs">
@@ -40,7 +38,7 @@
       ></el-pagination>
     </div>
     <my-footer></my-footer>
-  </el-container>
+  </div>
 </template>
 
 <script>
@@ -52,7 +50,8 @@ export default {
     return {
       lpage: "上一页",
       rpage: "下一页",
-      list: []
+      list: [],
+      x: 1
     };
   },
   components: {
@@ -72,55 +71,50 @@ export default {
         //    console.log(result.data.data[i].pics);
         // }
         this.list = result.data.data;
-        console.log(this.list);
+        // console.log(this.list);
       });
     },
-    
+    clickPhoto(e) {
+      this.x = e.target.dataset.msg;
+      console.log(this.x);
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.el-container {
-  .el-header {
-    height: 0.8rem;
-    background-color: #000;
-    margin: 0;
-    padding: 0;
-  }
-  .container {
-    max-width: 12.04rem;
-    margin: auto;
-    // 顶部面包屑
-    .t-breadcrumbs {
-      margin-top: 36px;
-      font-family: 宋体;
+.container {
+  max-width: 12.04rem;
+  margin: auto;
+  // 顶部面包屑
+  .t-breadcrumbs {
+    margin-top: 36px;
+    font-family: 宋体;
 
-      .el-breadcrumb {
-        .el-breadcrumb__item {
-          a,
-          span {
-            font-size: 0.15rem;
-            font-weight: 500;
-          }
+    .el-breadcrumb {
+      .el-breadcrumb__item {
+        a,
+        span {
+          font-size: 0.15rem;
+          font-weight: 500;
         }
       }
-
-      a:hover {
-        color: #f00;
-      }
     }
 
-    // 图片列表
-    .photoList {
-      flex-wrap: wrap;
+    a:hover {
+      color: #f00;
     }
+  }
 
-    // 底部分页
-    div.el-pagination {
-      margin-top: 36px;
-      color: #aaa;
-    }
+  // 图片列表
+  .photoList {
+    flex-wrap: wrap;
+  }
+
+  // 底部分页
+  div.el-pagination {
+    margin-top: 36px;
+    color: #aaa;
   }
 }
 </style>

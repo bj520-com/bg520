@@ -28,25 +28,25 @@
       <div class="footer_nav_dash"></div>
       <ul class="footer_nav">
         <li>
-          <router-link to="index">公司首页</router-link>
+          <router-link to="/">公司首页</router-link>
         </li>
         <li>
-          <router-link to="index">公司简介</router-link>
+          <router-link to="/">公司简介</router-link>
         </li>
         <li>
-          <router-link to="index">人才招聘</router-link>
+          <router-link to="/">人才招聘</router-link>
         </li>
         <li>
-          <router-link to="index">银行账户</router-link>
+          <router-link to="/">银行账户</router-link>
         </li>
         <li>
-          <router-link to="index">客照欣赏</router-link>
+          <router-link to="/photoshow/1">客照欣赏</router-link>
         </li>
         <li>
-          <router-link to="index">客户微电影</router-link>
+          <router-link to="/">客户微电影</router-link>
         </li>
         <li>
-          <router-link to="index">联系我们</router-link>
+          <router-link to="/">联系我们</router-link>
         </li>
       </ul>
     </div>

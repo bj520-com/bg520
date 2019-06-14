@@ -9,8 +9,8 @@ import CustomerCarousel from './components/CustomerCarousel'
 import Index from './views/Index'
 import photoShow from './views/photoShow'
 import photoList from './views/photoList'
-import customserList from './views/customerList.vue'
 import customerList from './views/customerList'
+import cusdetails from './components/customer/cusdetails'
 
 
 Vue.use(Router)
@@ -62,10 +62,21 @@ export default new Router({
       name: 'photoshow',
       component: photoShow,
       props: true
-    }, {
+    },
+    {
       path: '/photoList',
       name: "photolist",
       component: photoList
-    }
+    },
+    {
+      path: '/customerList',
+      name: 'customerlist',
+      component: customerList
+    }, {
+      path: '/customerdetails/:cid',
+      name: 'cusdetails',
+      component: cusdetails,
+      props: true
+    },
   ]
 })
