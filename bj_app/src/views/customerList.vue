@@ -29,15 +29,18 @@
         @current-change="loadlist"
       ></el-pagination>
     </div>
+    <my-footer></my-footer>
   </div>
 </template>
 <script>
 import cuslist from "../components/customer/cuslist.vue";
 import MyHeader from "@/components/Header";
+import MyFooter from "@/components/Footer";
 export default {
   components: {
     cuslist,
-    MyHeader
+    MyHeader,
+    MyFooter
   },
   data() {
     return {

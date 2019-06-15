@@ -12,7 +12,7 @@
         <img class="img-fluid" src="../../public/images/index/index_city.jpg" alt>
       </div>
       <div class="city flex">
-        <CityList/>
+        <citylist/>
         <city-carousel/>
       </div>
       <div class="container-fluid">
