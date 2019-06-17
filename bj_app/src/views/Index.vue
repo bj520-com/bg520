@@ -12,7 +12,7 @@
         <img class="img-fluid" src="../../public/images/index/index_city.jpg" alt>
       </div>
       <div class="city flex">
-        <citylist/>
+        <city-list></city-list>
         <city-carousel/>
       </div>
       <div class="container-fluid">
@@ -90,8 +90,12 @@ export default {
     height: 0.8rem !important;
     padding: 0;
     width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99999;
   }
   .el-main {
+    margin-top: 0.8rem;
     overflow: hidden;
     padding: 0;
     .city {

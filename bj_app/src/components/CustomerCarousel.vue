@@ -36,6 +36,7 @@ export default {
         slidesPerView: 4,
         slidesPerGroup: 4,
         grabCursor: true,
+        loop: true,
         // loopFillGroupWithBlank: true,
         autoplay: {
           delay: 3000,
