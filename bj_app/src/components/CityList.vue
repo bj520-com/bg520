@@ -1,9 +1,15 @@
 <template>
   <div>
     <ul class="city_list flex">
-      <li class="city_item" v-for="(item, i) in nameCHI" :key="i">
+      <li
+        class="city_item"
+        v-for="(item, i) in nameCHI"
+        :key="i"
+        @click="change($event)"
+        :data-id="i"
+      >
         <div>
-          <a href="index">{{item}}</a>
+          <a>{{item}}</a>
         </div>
       </li>
     </ul>
@@ -12,13 +18,14 @@
 
 <script>
 export default {
-  name: "CityList",
   data() {
     return {
       list: [],
-      nameCHI: []
+      nameCHI: [],
+      city: ""
     };
   },
+  props: ["city"],
   created() {
     this.getCity();
   },
@@ -36,6 +43,12 @@ export default {
     },
     loadCity() {
       console.log(123);
+    },
+
+    /*点击事件 */
+    change(e) {
+      this.city = e.target.innerText;
+      this.$emit("sendVal", this.city);
     }
   }
 };
@@ -43,7 +56,7 @@ export default {
 
 <style lang="scss" scoped>
 .city_list {
-  max-width: 11.8rem;
+  max-width: 12rem;
   text-align: center;
   padding: 0;
   flex-wrap: wrap;

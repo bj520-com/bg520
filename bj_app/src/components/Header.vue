@@ -42,7 +42,7 @@
           <router-link to="/">当季特惠</router-link>
         </el-menu-item>
         <el-menu-item index="4">
-          <router-link to="/">旅拍城市</router-link>
+          <router-link to="/travel/1">旅拍城市</router-link>
         </el-menu-item>
         <el-menu-item index="5">
           <router-link to="/photoshow/1">客照欣赏</router-link>

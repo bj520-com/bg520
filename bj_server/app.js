@@ -177,3 +177,36 @@ server.get("/li", (req, res) => {
 		}
 	})
 });
+
+
+// 师念
+//旅拍城市
+server.get("/travel", (req, res) => {
+	console.log(req.query)
+	var address = req.query.address == "" ? '厦门' : req.query.address;
+	// console.log( del)
+	// var sql="select tname,href,pics from travel_image where tname=?";
+	var sql = "select del,address,href,pics from travel_image where address=?"
+	pool.query(sql, [address], (err, result) => {
+		if (err) throw err;
+		res.send({
+			code: 1,
+			msg: "success",
+			data: result
+		})
+		console.log(result)
+	})
+})
+//客戶婚紗照
+server.get("/travelList", (req, res) => {
+
+	pool.query("SELECT del,address,href,pics FROM travel_image ", (err, result) => {
+		if (err) throw err;
+		res.send({
+			code: 1,
+			msg: "succeed",
+			data: result
+		});
+		console.log(result)
+	})
+})

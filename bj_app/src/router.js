@@ -11,7 +11,8 @@ import photoShow from './views/photoShow'
 import photoList from './views/photoList'
 import customerList from './views/customerList'
 import cusdetails from './components/customer/cusdetails'
-
+import travel from './views/travel'
+import travelList from './views/travelList'
 
 Vue.use(Router)
 
@@ -78,5 +79,15 @@ export default new Router({
       component: cusdetails,
       props: true
     },
+    {
+      path: '/travelList',
+      name: "travelList",
+      component: travelList
+    }, {
+      path: '/travel/:href',
+      name: 'travel',
+      component: travel,
+      props: true
+    }
   ]
 })

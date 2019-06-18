@@ -97,3 +97,32 @@ INSERT INTO customerPhoto VALUES(NULL,"aprthird","4月第3季最新客照","1.jp
 INSERT INTO customerPhoto VALUES(NULL,"aprsecond","4月第2季最新客照","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg,16.jpg,17.jpg,18.jpg,19.jpg,20.jpg,21.jpg,22.jpg,23.jpg,24.jpg,25.jpg,26.jpg,27.jpg,28.jpg,29.jpg");
 INSERT INTO customerPhoto VALUES(NULL,"aprfirst","4月第1季最新客照","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg,16.jpg,17.jpg,18.jpg,19.jpg,20.jpg,21.jpg,22.jpg,23.jpg,24.jpg,25.jpg,26.jpg,27.jpg,28.jpg,29.jpg,30.jpg");
 
+/*师念*/
+/*旅拍城市列表*/
+CREATE TABLE travel_image(
+   tid      INT PRIMARY KEY  AUTO_INCREMENT,
+   del  VARCHAR(64),
+   address    VARCHAR(64),
+   href     VARCHAR(256),
+   pics     VARCHAR(1024)
+);
+INSERT INTO travel_image VALUES(NULL,"sanya","三亚","26","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"xiamen","厦门","27","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"lijiang","丽江","22","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"dali","大理","19","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"qingdao","青岛","25","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"dalian","大连","20","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"guilin","桂林","21","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"sz","深圳","28","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"xg","香港","30","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"aomen","澳门","546","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"beijing","北京","417","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"hangzhou","杭州","350","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"xianggelila","香格里拉","31","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"balidao","巴厘岛","18","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"pujidao","普吉岛","24","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"maerdaifu","马尔代夫","23","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"rb","日本","351","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"oz","欧洲","352","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"bl","巴黎","544","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
+INSERT INTO travel_image VALUES(NULL,"blg","布拉格","545","1.jpg,2.jpg,3.jpg,4.jpg,5.jpg,6.jpg,7.jpg,8.jpg,9.jpg,10.jpg,11.jpg,12.jpg,13.jpg,14.jpg,15.jpg");
