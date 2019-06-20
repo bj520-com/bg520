@@ -74,7 +74,7 @@ server.get("/photoList", (req, res) => {
 
 // 请求主页city轮播图片及文字
 server.get("/city", (req, res) => {
-	var sql = "SELECT nameEng,nameCHI,car_img FROM city_carousel";
+	var sql = "SELECT did, nameEng,nameCHI,car_img FROM city_carousel";
 	pool.query(sql, (err, result) => {
 		if (err) throw err;
 		res.send({

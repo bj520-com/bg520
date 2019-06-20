@@ -3,7 +3,7 @@
     <swiper :options="swiperOption" ref="mySwiper">
       <swiper-slide v-for="(item,i) in list" :key="i">
         <div class="city flex">
-          <a href="index">
+          <router-link :to="`/travel/${item.cid}/`">
             <img :src="`http://127.0.0.1:3000/city/${item.car_img}`" class="img-fluid" alt>
             <div class="city_content">
               <p>
@@ -14,7 +14,7 @@
               <span>最新客照展示</span>
               <div class="tsgd">点击查看</div>
             </div>
-          </a>
+          </router-link>
         </div>
       </swiper-slide>
     </swiper>
