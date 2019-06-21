@@ -8,9 +8,11 @@
         @click="change($event)"
         :data-id="i"
       >
-        <div>
-          <a>{{item}}</a>
-        </div>
+        <router-link :to="`/travel/${i}`">
+          <div>
+            <a>{{item}}</a>
+          </div>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -21,8 +23,7 @@ export default {
   data() {
     return {
       list: [],
-      nameCHI: [],
-      city: ""
+      nameCHI: []
     };
   },
   props: ["city"],
@@ -41,10 +42,6 @@ export default {
         this.nameCHI = Array.from(new Set(this.nameCHI));
       });
     },
-    loadCity() {
-      console.log(123);
-    },
-
     /*点击事件 */
     change(e) {
       this.city = e.target.innerText;

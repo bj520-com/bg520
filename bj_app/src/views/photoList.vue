@@ -71,6 +71,7 @@ export default {
         //    console.log(result.data.data[i].pics);
         // }
         this.list = result.data.data;
+        console.log(this.$route.params.id);
         // console.log(this.list);
       });
     },
