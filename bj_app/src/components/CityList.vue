@@ -3,16 +3,14 @@
     <ul class="city_list flex">
       <li
         class="city_item"
-        v-for="(item, i) in nameCHI"
+        v-for="(item, i) in list"
         :key="i"
-        @click="change($event)"
-        :data-id="i"
+        @click="jumpToCity(item.did)"
       >
-        <router-link :to="`/travel/${i}`">
-          <div>
-            <a>{{item}}</a>
-          </div>
-        </router-link>
+        <!-- :data-id="i" -->
+        <div>
+          <a>{{item.nameCHI}}</a>
+        </div>
       </li>
     </ul>
   </div>
@@ -35,17 +33,19 @@ export default {
       this.axios.get("city/").then(result => {
         // console.log(result.data.data[1].nameEng);
         this.list = result.data.data;
-        for (var i = 0; i < this.list.length; i++) {
-          this.nameCHI.push(this.list[i].nameCHI);
-        }
-        //去掉数组重复元素
-        this.nameCHI = Array.from(new Set(this.nameCHI));
+        this.list.splice(17, 1);
+        console.log(this.list);
+        // for (var i = 0; i < this.list.length; i++) {
+        //   this.nameCHI.push(this.list[i].nameCHI);
+        // }
+        // //去掉数组重复元素
+        // this.nameCHI = Array.from(new Set(this.nameCHI));
       });
     },
     /*点击事件 */
-    change(e) {
-      this.city = e.target.innerText;
-      this.$emit("sendVal", this.city);
+    jumpToCity(did) {
+      this.$router.push({ path: `/travel/${did}` });
+      // console.log(did);
     }
   }
 };

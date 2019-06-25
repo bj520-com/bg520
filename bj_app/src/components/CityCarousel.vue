@@ -33,16 +33,8 @@ export default {
         autoplay: {
           delay: 3000,
           stopOnLastSlide: false,
-          disableOnInteraction: false
+          disableOnInteraction: false //循环模式下不生效
         },
-        // pagination: {
-        //   el: ".swiper-pagination"
-        // },
-        loop: true
-        // navigation: {
-        //   nextEl: ".swiper-button-next",
-        //   prevEl: ".swiper-button-prev"
-        // }
       },
       list: []
     };
