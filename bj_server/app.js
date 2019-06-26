@@ -182,19 +182,20 @@ server.get("/li", (req, res) => {
 // 师念
 //旅拍城市
 server.get("/travel", (req, res) => {
-	console.log(req.query)
-	var address = req.query.address == "" ? '厦门' : req.query.address;
+	console.log(req.query.tid)
+	// var tid = req.query.tid == "" ? 1 : req.query.tid;
+	var tid = req.query.tid;
 	// console.log( del)
 	// var sql="select tname,href,pics from travel_image where tname=?";
-	var sql = "select del,address,href,pics from travel_image where address=?"
-	pool.query(sql, [address], (err, result) => {
+	var sql = "select del,address,href,pics from travel_image where tid=?"
+	pool.query(sql, [tid], (err, result) => {
 		if (err) throw err;
 		res.send({
 			code: 1,
 			msg: "success",
 			data: result
 		})
-		console.log(result)
+		// console.log(result)
 	})
 })
 //客戶婚紗照
