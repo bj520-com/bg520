@@ -5,7 +5,7 @@
         class="city_item"
         v-for="(item, i) in list"
         :key="i"
-        @click="jumpToCity(item.did)"
+        @click="jumpToCity(item.did,item.nameCHI)"
       >
         <!-- :data-id="i" -->
         <div>
@@ -17,12 +17,19 @@
 </template>
 
 <script>
+import { mapState, mapActions, mapGetters } from "vuex";
 export default {
   data() {
     return {
       list: [],
       nameCHI: []
+      // address: ""
     };
+  },
+  computed: {
+    ...mapState({
+      address: state => state.address
+    })
   },
   props: ["city"],
   created() {
@@ -43,9 +50,15 @@ export default {
       });
     },
     /*点击事件 */
-    jumpToCity(did) {
+    jumpToCity(did, city) {
       this.$router.push({ path: `/travel/${did}` });
-      // console.log(did);
+      // console.log(this.address);
+      console.log(city);
+      // this.$router.go(0);
+      window.location.reload();
+      this.$store.state.address = city;
+      console.log(city);
+      // Vue.$set(address, city);
     }
   }
 };

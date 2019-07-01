@@ -19,7 +19,7 @@
         <city-list></city-list>
       </el-header>
       <div v-for="(item,i) of rounter" :key="i" :data-id="i">
-        <img :src="`http://127.0.0.1:3000/travel/${del}/${item}`" alt class="img">
+        <img :src="`http://127.0.0.1:3000/travel/${del}/${item}`" alt class="img" />
       </div>
       <div class="button">
         <a href="#top">返回顶部</a>
@@ -29,6 +29,8 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions, mapGetters } from "vuex";
+
 import myHeader from "../components/Header.vue";
 import myFooter from "../components/Footer.vue";
 import CityList from "../components/CityList.vue";
@@ -36,7 +38,7 @@ export default {
   data() {
     return {
       rounter: [],
-      address: "厦门",
+      // address: "厦门",
       del: "xiamen",
       href: 2
     };
@@ -46,12 +48,16 @@ export default {
     myFooter: myFooter,
     CityList: CityList
   },
+  computed: {
+    ...mapState({
+      address: state => state.address
+    })
+  },
   created() {
     this.loadMore();
   },
   methods: {
     loadMore() {
-      console.log(this.$route.params.href);
       this.href = this.$route.params.href;
       var url = "travel/";
       var tid = this.href;
