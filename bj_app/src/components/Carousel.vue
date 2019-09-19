@@ -48,7 +48,7 @@ export default {
         // pagination: {
         //   el: ".swiper-pagination"
         // },
-        // loop: true,
+        loop: true,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev"

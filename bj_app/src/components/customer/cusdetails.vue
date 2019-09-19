@@ -11,12 +11,14 @@
           <p class="subtitle1">{{item.subtitle}}</p>
           <!-- 文字和图片 -->
           <div style="text-align:left" v-for="(item,index) of arr" :key="index">
-            <div class="details">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{item.text}}</div>
-            <img :src="`http://127.0.0.1:3000/cusdetails/${item.img}`" alt style="width:100%">
+            <div class="details">
+              <p>{{item.text}}</p>
+            </div>
+            <img :src="`http://127.0.0.1:3000/cusdetails/${item.img}`" alt style="width:100%" />
           </div>
           <div @click="pre" class="prenex">上一篇</div>
           <div @click="nex" class="prenex">下一篇</div>
-          <input type="button" value="返回上一级" class="bt" @click="bt">
+          <input type="button" value="返回上一级" class="bt" @click="bt" />
         </el-col>
         <!-- 右边 -->
         <el-col :span="8">
@@ -153,6 +155,9 @@ p.subtitle1 {
 .details {
   font-size: 16px;
   margin: 15px 0;
+}
+.details p {
+  text-indent: 2em;
 }
 /* 返回上一级按钮 */
 .bt {
